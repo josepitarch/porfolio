@@ -46,6 +46,17 @@ const PROJECTS = [
 ];
 ---
 
+<style>
+  ul {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+
+  ul::-webkit-scrollbar {
+    display: none; /* Safari y Chrome */
+  }
+</style>
+
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link }) => (
@@ -66,7 +77,7 @@ const PROJECTS = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-row mb-2 gap-x-2 overflow-x-auto">
               {tags.map((tag) => (
                 <li>
                   <span
